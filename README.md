@@ -1,2 +1,2 @@
 # GeoProcessing
-Scripts that do spatial calculations.
+Scripts that do spatial data stuff.
