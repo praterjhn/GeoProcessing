@@ -1,6 +1,6 @@
-# Author: john_prater()
+# Author: John Prater praterjhn@gmail.com
 # Date: 1/27/2016
-# For: Utility Analytics, Method 1 Machine Step 1.
+# For: Utility Analytics
 
 """ Use the geometry of the tower report to calculate distances from the top
     of a tower to each attachment point on that tower """
@@ -11,19 +11,12 @@ from math import *
 
 arcpy.env.overwriteOutput = True
 
-# TwrRprt = r"C:\JPRATER\Method1Machine\Testing\los_esteros_metcalf_230kv\LOS_ESTEROS_METCALF_TOWER_REPORT_RL_151210_CASP3_201_TAGGED.csv"
-# InsLins = r"C:\JPRATER\Method1Machine\Testing\los_esteros_metcalf_230kv\Los_Esteros_Metcalf_NAD_1983_2011_StatePlane_California_III_FIPS_0403_Ft_US_IB_151203_Lines_For_M1_Machine.shp"
-# InsPost = r"C:\JPRATER\Method1Machine\Testing\los_esteros_metcalf_230kv\Los_Esteros_Metcalf_NAD_1983_2011_StatePlane_California_III_FIPS_0403_Ft_US_IB_151203_Posts_For_M1_Machine.shp"
-# InsShld = ""
-# CordSys = arcpy.SpatialReference(103005) # CASP3
-# OutFldr = r"C:\JPRATER\Method1Machine\Testing\los_esteros_metcalf_230kv"
-
-TwrRprt = arcpy.GetParameterAsText(0)  # file
-InsLins = arcpy.GetParameterAsText(1)  # layer
-InsPost = arcpy.GetParameterAsText(2)  # layer
-InsShld = arcpy.GetParameterAsText(3)  # layer
-CordSys = arcpy.GetParameterAsText(4)  # coordinate system
-OutFldr = arcpy.GetParameterAsText(5)  # folder
+TwrRprt = arcpy.GetParameterAsText(0)  # file - CSV of tower locations
+InsLins = arcpy.GetParameterAsText(1)  # layer - Shapefile of insulator lines (dead ends/suspensions)
+InsPost = arcpy.GetParameterAsText(2)  # layer - Shapefile of insulator points (posts)
+InsShld = arcpy.GetParameterAsText(3)  # layer - Shapefile of insulator shields 
+CordSys = arcpy.GetParameterAsText(4)  # coordinate system - ArcGIS style
+OutFldr = arcpy.GetParameterAsText(5)  # folder - directory
 
 ''' Create attachment points '''
 
