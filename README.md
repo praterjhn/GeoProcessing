@@ -1,2 +1,2 @@
 # GeoProcessing
-Scripts that do spatial analysis.
+Random geoprocessing scripts

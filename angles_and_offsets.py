@@ -257,10 +257,11 @@ with arcpy.da.SearchCursor(twrRpt_shp, ["Shape@XY", "TWR_LAT", "TWR_LONG", "QSI_
             magB = sqrt((vecB[0] * vecB[0]) + (vecB[1] * vecB[1]))
             dot = ((vecA[0] * vecB[0]) + (vecA[1] * vecB[1])) / (magA * magB)
 
+            # rare case for 0 angle
+            dot = dot if dot < 1.0 else 0.9999
+
             # arccosine yields angle in radians
             arcCos = acos(dot)
-            # if degrees(angle2) > degrees(angle1):
-            # arcCos = arcCos * (-1)
 
             # convert radians to degrees
             degree = round(degrees(arcCos), 4)
