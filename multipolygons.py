@@ -1,4 +1,4 @@
-# Author: John Prater jprater@quantumspatial.com
+# Author: John Prater
 # produces a shapefile of the "difference" between 'POLYS_SHP' and 'ERASE_SHP'
 # substitute for ESRI "Erase" function which requires ArcEditor/Standard license or better
 
